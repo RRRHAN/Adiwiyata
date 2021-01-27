@@ -1,25 +1,51 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg"
+import Utama from "./Components/utama"
+import { Link } from "react-router-dom"
+import "./App.css"
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<div>
+			<nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+				<a class='navbar-brand' href='#'>
+					Navbar
+				</a>
+				<button
+					class='navbar-toggler'
+					type='button'
+					data-toggle='collapse'
+					data-target='#navbarNav'
+					aria-controls='navbarNav'
+					aria-expanded='false'
+					aria-label='Toggle navigation'
+				>
+					<span class='navbar-toggler-icon'></span>
+				</button>
+				<div class='collapse navbar-collapse' id='navbarNav'>
+					<ul class='navbar-nav'>
+						<Link to='/' class='nav-item active'>
+							<a class='nav-link text-light' href='#'>
+								Beranda <span class='sr-only'>(current)</span>
+							</a>
+						</Link>
+						<Link to='/galeri' class='nav-item'>
+							<a class='nav-link text-light' href='#'>
+								Galeri
+							</a>
+						</Link>
+						<Link to='/hari_besar' class='nav-item'>
+							<a class='nav-link text-light' href='#'>
+								Hari Besar
+							</a>
+						</Link>
+					</ul>
+				</div>
+			</nav>
+			<div className='m-5'>
+				<Utama />
+			</div>
+		</div>
+	)
 }
 
-export default App;
+export default App
